@@ -1,4 +1,4 @@
-# Total Complete: 5
+# Total Completed: 5
 
 ## Check your arrows
 
