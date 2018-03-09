@@ -1,4 +1,4 @@
-# Total Completed: 5
+# Total Completed: 6
 
 ## Moving Zeros To The End
 
@@ -179,5 +179,36 @@ function validParentheses(parens) {
   }
 
   return count === 0;
+}
+```
+
+## Scramblies
+
+https://www.codewars.com/kata/scramblies/javascript
+
+Write function scramble(str1,str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
+
+For example:
+str1 is 'rkqodlw' and str2 is 'world' the output should return true.
+str1 is 'cedewaraaossoqqyt' and str2 is 'codewars' should return true.
+str1 is 'katas' and str2 is 'steak' should return false.
+
+```javascript
+function scramble(str1, str2) {
+  let chars = {};
+
+  for (let i = 0; i < str1.length; i++) {
+    chars[str1[i]] = (chars[str1[i]] || 0) + 1;
+  }
+
+  for (let j = 0; j < str2.length; j++) {
+    if (chars[str2[j]] === undefined || chars[str2[j]] < 1) {
+      return false;
+    } else {
+      chars[str2[j]] = chars[str2[j]] - 1;
+    }
+  }
+
+  return true;
 }
 ```
