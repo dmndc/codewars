@@ -1,4 +1,4 @@
-# Total Completed: 3
+# Total Completed: 4
 
 ## Take a Ten Minute Walk
 
@@ -76,5 +76,27 @@ function likes(names) {
     default:
       return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
   }
+}
+```
+
+## Which are in?
+
+https://www.codewars.com/kata/which-are-in/javascript
+
+Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are substrings of strings of a2.
+
+```javascript
+function inArray(array1, array2) {
+  let r = [];
+
+  for (let str2 of array2) {
+    for (let str1 of array1) {
+      if (str2.includes(str1)) {
+        r.push(str1);
+      }
+    }
+  }
+
+  return Array.from(new Set(r)).sort();
 }
 ```
