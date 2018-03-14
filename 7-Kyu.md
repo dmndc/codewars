@@ -1,4 +1,4 @@
-# Total Completed: 6
+# Total Completed: 8
 
 ## Credit Card Mask
 
@@ -113,6 +113,36 @@ function squareDigits(num) {
       .map(function(x) {
         return Math.pow(x, 2);
       })
+      .join('')
+  );
+}
+```
+
+## Shortest word
+
+https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9
+
+Simple, given a string of words, return the length of the shortest word(s).
+
+```javascript
+function findShort(s) {
+  words = s.split(' ').sort((a, b) => a.length - b.length);
+  return words[0].length;
+}
+```
+
+## Descending order
+
+https://www.codewars.com/kata/5467e4d82edf8bbf40000155
+
+Your task is to make a function that can take any non-negative integer as a argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+```javascript
+function descendingOrder(n) {
+  return Number(
+    ('' + n)
+      .split('')
+      .sort((a, b) => b - a)
       .join('')
   );
 }
