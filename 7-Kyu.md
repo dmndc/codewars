@@ -1,4 +1,4 @@
-# Total Completed: 8
+# Total Completed: 10
 
 ## Credit Card Mask
 
@@ -145,5 +145,37 @@ function descendingOrder(n) {
       .sort((a, b) => b - a)
       .join('')
   );
+}
+```
+
+## Sum of integers in string
+
+https://www.codewars.com/kata/598f76a44f613e0e0b000026
+
+Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+```javascript
+function sumOfIntegersInString(s) {
+  const numbers = s.match(/\d+/g);
+
+  if (numbers) {
+    return numbers.map(Number).reduce((a, b) => a + b);
+  } else {
+    return 0;
+  }
+}
+```
+
+## Sum of two lowest positive integers
+
+https://www.codewars.com/kata/558fc85d8fd1938afb000014
+
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 integers. No floats or empty arrays will be passed.
+For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+```javascript
+function sumTwoSmallestNumbers(numbers) {
+  let sortedNums = numbers.sort((a, b) => a - b);
+  return sortedNums[0] + sortedNums[1];
 }
 ```
