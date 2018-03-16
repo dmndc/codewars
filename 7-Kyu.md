@@ -1,4 +1,4 @@
-# Total Completed: 10
+# Total Completed: 11
 
 ## Credit Card Mask
 
@@ -177,5 +177,17 @@ For example, when an array is passed like [19, 5, 42, 2, 77], the output should 
 function sumTwoSmallestNumbers(numbers) {
   let sortedNums = numbers.sort((a, b) => a - b);
   return sortedNums[0] + sortedNums[1];
+}
+```
+
+## Sort array by string length
+
+https://www.codewars.com/kata/57ea5b0b75ae11d1e800006c
+
+Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+
+```javascript
+function sortByLength(array) {
+  return array.sort((a, b) => a.length - b.length);
 }
 ```
