@@ -1,4 +1,4 @@
-# Total Completed: 5
+# Total Completed: 6
 
 ## Take a Ten Minute Walk
 
@@ -118,5 +118,27 @@ function findEvenIndex(arr) {
     }
   }
   return -1;
+}
+```
+
+## Replace With Alphabet Position
+
+https://www.codewars.com/kata/546f922b54af40e1e90001da
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+```javascript
+function alphabetPosition(text) {
+  let result = ''
+  
+  for (let i = 0; i < text.length; i++) {
+    let upperCaseRange = text.charCodeAt(i) >= 65 && text.charCodeAt(i) <= 90
+    let lowerCaseRange = text.charCodeAt(i) >= 97 && text.charCodeAt(i) <= 122
+
+    if (upperCaseRange) result += (text.charCodeAt(i) - 64) + ' '
+    if (lowerCaseRange) result += (text.toUpperCase().charCodeAt(i) - 64) + ' '
+  }
+  
+  return result.trimRight()
 }
 ```
